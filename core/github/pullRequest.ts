@@ -1,13 +1,16 @@
 export class PullRequest {
+    private readonly id: number;
     private readonly author: string;
     private readonly mergeStateStatus: string;
     private readonly number: number;
     private readonly status: string;
     private readonly owner: string;
     private readonly repository: string;
-    private reviews: { state: string }[];
+    private readonly requestedReviews: { id: string; login: string }[];
+    private readonly reviews: { state: string; author: { id: string; login: string } }[];
 
     constructor({
+        id,
         author,
         mergeStateStatus,
         number,
@@ -15,15 +18,19 @@ export class PullRequest {
         status,
         owner,
         repository,
+        requestedReviews,
     }: {
+        id: number;
         author: string;
         mergeStateStatus: string;
         number: number;
-        reviews: { state: string }[];
+        reviews: { state: string; author: { id: string; login: string } }[];
         status: string;
-        owner: string,
-        repository: string,
+        owner: string;
+        repository: string;
+        requestedReviews: { id: string; login: string }[];
     }) {
+        this.id = id;
         this.author = author;
         this.mergeStateStatus = mergeStateStatus;
         this.number = number;
@@ -31,10 +38,15 @@ export class PullRequest {
         this.status = status;
         this.owner = owner;
         this.repository = repository;
+        this.requestedReviews = requestedReviews;
     }
 
     public getAuthor(): string {
         return this.author;
+    }
+
+    public getId(): number {
+        return this.id;
     }
 
     public getNumber(): number {
@@ -71,5 +83,17 @@ export class PullRequest {
 
     public getHref(): string {
         return `https://github.com/${this.owner}/${this.repository}/pull/${this.number}`;
+    }
+
+    public isBlocked(): boolean {
+        return ['BLOCKED'].includes(this.mergeStateStatus);
+    }
+
+    public getRequestedReviews(): { id: string; login: string }[] {
+        return this.requestedReviews;
+    }
+
+    public getReviews(): { id: string; login: string }[] {
+        return this.reviews.map((review) => review.author);
     }
 }

@@ -9,7 +9,6 @@ import { Events, Messenger } from "./core/messenger/messenger";
 (async () => {
     const discordClient = new DiscordClient(process.env.DISCORD_TOKEN);
     await discordClient.login();
-    // await discordClient.logout();
 
     const messenger = new Messenger();
     messenger.addHandler(messageHandler(discordClient));
@@ -33,6 +32,6 @@ import { Events, Messenger } from "./core/messenger/messenger";
         await gusaMobileHandler.init();
         await gusaMobileHandler.run();
     } catch (e) {
-        await messenger.message(Events.ERROR, null, e.message);
+        await messenger.message(Events.ERROR, null, e.stack);
     }
 })();

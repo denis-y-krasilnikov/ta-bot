@@ -59,12 +59,14 @@ export class UpdatesHandler {
                         oldPR.isFailing() ||
                         oldPR.isBehind() ||
                         oldPR.hasChangeRequest() ||
-                        !oldPR.isSuccess()) &&
+                        !oldPR.isSuccess() ||
+                        oldPR.isBlocked()) &&
                     !newPR.hasConflicts() &&
                     !newPR.isFailing() &&
                     !newPR.isBehind() &&
                     !newPR.hasChangeRequest() &&
-                    newPR.isSuccess()
+                    newPR.isSuccess() &&
+                    !newPR.isBlocked()
                 ) {
                     const approvesCount = newPR.getApprovesCount();
                     if (approvesCount >= 2) {
@@ -80,6 +82,7 @@ export class UpdatesHandler {
             }
 
             await this.messenger.message(Events.CREATED, newPR);
+            await this.pullRequestsFetcher.requestReviews(newPR);
             this.storedPullRequests[number] = newPR;
         });
 

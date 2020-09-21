@@ -1,8 +1,8 @@
-import { DiscordClient } from "../../discord/discordClient";
-import { Events } from "../messenger";
-import { PullRequest } from "../../github/pullRequest";
-import { logInFile } from "../../../utils/logInFile";
-
+import { DiscordClient } from '../../discord/discordClient';
+import { Events } from '../messenger';
+import { PullRequest } from '../../github/pullRequest';
+import { logInFile } from '../../../utils/logInFile';
+import { format } from 'util';
 
 const usersMapping = {
     'denis-y-krasilnikov': '<@347364555736875008>',
@@ -46,7 +46,7 @@ export const messageHandler = (discordClient: DiscordClient) => async (
                 content: `Pull request ${pr.getHref()} ${message}`,
             });
         }
-        console.log(`[${pr.getNumber()}] Pull request ${message}`);
+        console.log(`[${pr.getNumber()}] Pull request ${format(message)}`);
         logInFile(`[${pr.getNumber()}] Pull request ${message}`);
     };
     switch (event) {

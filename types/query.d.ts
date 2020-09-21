@@ -1,30 +1,44 @@
 type Commit = {
-  commit: {
-    statusCheckRollup: { state: string };
-  }
-}
+    commit: {
+        statusCheckRollup: { state: string };
+    };
+};
 type Review = {
-  state: string;
-}
+    state: string;
+    author: {
+        id: string;
+        login: string;
+    };
+};
+type ReviewRequest = {
+    requestedReviewer: {
+        id: string;
+        login: string;
+    };
+};
 type Author = {
-  login: string;
-}
+    login: string;
+};
 type PullRequest = {
-  mergeable: string;
-  number: number;
-  author: Author;
-  commits: {
-    nodes: Commit[]
-  };
-  latestReviews: {
-    nodes: Review[];
-  }
-  mergeStateStatus: string;
-}
+    id: number;
+    mergeable: string;
+    number: number;
+    author: Author;
+    commits: {
+        nodes: Commit[];
+    };
+    latestReviews: {
+        nodes: Review[];
+    };
+    reviewRequests: {
+        nodes: ReviewRequest[];
+    };
+    mergeStateStatus: string;
+};
 export type PullRequestsQueryResult = {
-  repository: {
-    pullRequests: {
-      nodes: PullRequest[];
-    }
-  }
+    repository: {
+        pullRequests: {
+            nodes: PullRequest[];
+        };
+    };
 };
