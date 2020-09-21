@@ -85,7 +85,7 @@ export class UpdatesHandler {
 
         await forEachSeries(Object.keys(this.storedPullRequests), async (number) => {
             if (newPullRequests[number]) return;
-            await this.messenger.message(Events.CLOSED, newPullRequests[number]);
+            await this.messenger.message(Events.CLOSED, this.storedPullRequests[number]);
             delete this.storedPullRequests[number];
         });
         setTimeout(this.run.bind(this), this.interval);
