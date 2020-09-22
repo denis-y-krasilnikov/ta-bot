@@ -20,18 +20,28 @@ import { Events, Messenger } from "./core/messenger/messenger";
         repository: "GlassesUSA-Desktop",
         messenger
     });
-
     const gusaMobileHandler = new UpdatesHandler({
         owner: "optimaxdev",
         repository: "GlassesUSA-Mobile",
         messenger
     });
-    try {
-        await gusaDesktopHandler.init();
-        await gusaDesktopHandler.run();
-        await gusaMobileHandler.init();
-        await gusaMobileHandler.run();
-    } catch (e) {
-        await messenger.message(Events.ERROR, null, e.stack);
-    }
+    const uvpDesktopHandler = new UpdatesHandler({
+        owner: "optimaxdev",
+        repository: "UVP-Desktop",
+        messenger
+    });
+    const uvpMobileHandler = new UpdatesHandler({
+        owner: "optimaxdev",
+        repository: "UVP-Mobile",
+        messenger
+    });
+
+    await gusaDesktopHandler.init();
+    await gusaDesktopHandler.run();
+    await gusaMobileHandler.init();
+    await gusaMobileHandler.run();
+    await uvpDesktopHandler.init();
+    await uvpDesktopHandler.run();
+    await uvpMobileHandler.init();
+    await uvpMobileHandler.run();
 })();
