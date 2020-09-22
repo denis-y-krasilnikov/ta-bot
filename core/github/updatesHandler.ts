@@ -1,8 +1,7 @@
-
 import { forEachSeries } from 'p-iteration';
-import { Events, Messenger } from "../messenger/messenger";
-import { PullRequestsFetcher } from "./pullRequestsFetcher";
-import { PullRequest } from "./pullRequest";
+import { Events, Messenger } from '../messenger/messenger';
+import { PullRequestsFetcher } from './pullRequestsFetcher';
+import { PullRequest } from './pullRequest';
 
 export class UpdatesHandler {
     private readonly messenger: Messenger;
@@ -37,6 +36,11 @@ export class UpdatesHandler {
 
                 if (oldPR) {
                     if (JSON.stringify(oldPR) === JSON.stringify(newPR)) return;
+                    if (newPR.isDraft()) {
+                        await this.messenger.message(Events.DEBUG, newPR, '-------------------');
+                        this.storedPullRequests[number] = newPR;
+                        return;
+                    }
 
                     await this.messenger.message(Events.DEBUG, newPR, '----- UPDATED -----');
                     await this.messenger.message(Events.DEBUG, newPR, 'Old PR');
@@ -61,13 +65,15 @@ export class UpdatesHandler {
                             oldPR.isBehind() ||
                             oldPR.hasChangeRequest() ||
                             !oldPR.isSuccess() ||
-                            oldPR.isBlocked()) &&
+                            oldPR.isBlocked() ||
+                            oldPR.isDraft()) &&
                         !newPR.hasConflicts() &&
                         !newPR.isFailing() &&
                         !newPR.isBehind() &&
                         !newPR.hasChangeRequest() &&
                         newPR.isSuccess() &&
-                        !newPR.isBlocked()
+                        !newPR.isBlocked() &&
+                        !newPR.isDraft()
                     ) {
                         const approvesCount = newPR.getApprovesCount();
                         if (approvesCount >= 2) {

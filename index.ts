@@ -4,7 +4,7 @@ import { messageHandler } from "./core/messenger/messageHandlers/messageHandler"
 import { debugHandler } from "./core/messenger/messageHandlers/debugHandler";
 import { errorHandler } from "./core/messenger/messageHandlers/errorHandler";
 import { UpdatesHandler } from "./core/github/updatesHandler";
-import { Events, Messenger } from "./core/messenger/messenger";
+import { Messenger } from "./core/messenger/messenger";
 
 (async () => {
     const discordClient = new DiscordClient(process.env.DISCORD_TOKEN);
