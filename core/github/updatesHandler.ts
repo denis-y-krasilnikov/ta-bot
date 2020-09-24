@@ -36,6 +36,20 @@ export class UpdatesHandler {
 
                 if (oldPR) {
                     if (JSON.stringify(oldPR) === JSON.stringify(newPR)) return;
+
+                    if (
+                        JSON.stringify({
+                            ...newPR,
+                            mergeStateStatus: 'UNKNOWN',
+                        }) ===
+                            JSON.stringify({
+                                ...oldPR,
+                                mergeStateStatus: 'UNKNOWN',
+                            }) &&
+                        newPR.isUnknown()
+                    )
+                        return;
+
                     if (newPR.isDraft()) {
                         await this.messenger.message(Events.DEBUG, newPR, '-------------------');
                         this.storedPullRequests[number] = newPR;

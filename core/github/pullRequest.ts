@@ -69,6 +69,10 @@ export class PullRequest {
         return ['DRAFT'].includes(this.mergeStateStatus);
     }
 
+    public isUnknown(): boolean {
+        return ['UNKNOWN'].includes(this.mergeStateStatus);
+    }
+
     public hasChangeRequest(): boolean {
         return this.reviews.some((review) => ['CHANGES_REQUESTED'].includes(review.state));
     }
