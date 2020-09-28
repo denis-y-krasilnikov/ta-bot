@@ -93,10 +93,6 @@ export class PullRequest {
         return `https://github.com/${this.owner}/${this.repository}/pull/${this.number}`;
     }
 
-    public isBlocked(): boolean {
-        return ['BLOCKED'].includes(this.mergeStateStatus);
-    }
-
     public getRequestedReviews(): { id: string; login: string }[] {
         return this.requestedReviews;
     }

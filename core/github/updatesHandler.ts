@@ -79,14 +79,12 @@ export class UpdatesHandler {
                             oldPR.isBehind() ||
                             oldPR.hasChangeRequest() ||
                             !oldPR.isSuccess() ||
-                            oldPR.isBlocked() ||
                             oldPR.isDraft()) &&
                         !newPR.hasConflicts() &&
                         !newPR.isFailing() &&
                         !newPR.isBehind() &&
                         !newPR.hasChangeRequest() &&
                         newPR.isSuccess() &&
-                        !newPR.isBlocked() &&
                         !newPR.isDraft()
                     ) {
                         const approvesCount = newPR.getApprovesCount();
