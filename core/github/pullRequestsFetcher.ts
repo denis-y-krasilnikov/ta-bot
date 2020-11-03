@@ -12,7 +12,6 @@ export class PullRequestsFetcher {
         'MrViktorNikolaevich',
         'RomanLi182',
         'RomanMishushin',
-        'AleksanderMolodtsov',
         'ilya-mishushin',
         'dmitrychelyaev',
     ];
@@ -23,7 +22,6 @@ export class PullRequestsFetcher {
         MrViktorNikolaevich: 'MDQ6VXNlcjQyNjE1MjU4',
         RomanLi182: 'MDQ6VXNlcjQ2NzA5ODI0',
         RomanMishushin: 'MDQ6VXNlcjUxMDc3NzQ3',
-        AleksanderMolodtsov: 'MDQ6VXNlcjUzNDI1MzAx',
         'ilya-mishushin': 'MDQ6VXNlcjU2MDY3MjEz',
         dmitrychelyaev: 'MDQ6VXNlcjU4NDE1MzIw',
     };

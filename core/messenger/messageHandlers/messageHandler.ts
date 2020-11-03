@@ -10,7 +10,6 @@ const usersMapping = {
     MrViktorNikolaevich: '<@492418187669930014>',
     RomanLi182: '<@656471318274899987>',
     RomanMishushin: '<@691712005601755147>',
-    AleksanderMolodtsov: '<@691538395310063686>',
     'ilya-mishushin': '<@557235247369158682>',
     dmitrychelyaev: '<@691221927859191809>',
 };
