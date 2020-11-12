@@ -9,23 +9,23 @@ export class PullRequestsFetcher {
     private whitelist = [
         'denis-y-krasilnikov',
         'nikita-perep',
-        'MrViktorNikolaevich',
         'RomanLi182',
         'RomanMishushin',
         'AleksanderMolodtsov',
         'ilya-mishushin',
         'dmitrychelyaev',
+        'kondratievm',
     ];
 
     public userToIdMapping = {
         'denis-y-krasilnikov': 'MDQ6VXNlcjIzMjA5ODg5',
         'nikita-perep': 'MDQ6VXNlcjM0NjQ1MzIy',
-        MrViktorNikolaevich: 'MDQ6VXNlcjQyNjE1MjU4',
         RomanLi182: 'MDQ6VXNlcjQ2NzA5ODI0',
         RomanMishushin: 'MDQ6VXNlcjUxMDc3NzQ3',
         AleksanderMolodtsov: 'MDQ6VXNlcjUzNDI1MzAx',
         'ilya-mishushin': 'MDQ6VXNlcjU2MDY3MjEz',
         dmitrychelyaev: 'MDQ6VXNlcjU4NDE1MzIw',
+        kondratievm: 'MDQ6VXNlcjI2MjI0MTUw',
     };
 
     private query = graphql.defaults({

@@ -7,12 +7,12 @@ import { format } from 'util';
 const usersMapping = {
     'denis-y-krasilnikov': '<@347364555736875008>',
     'nikita-perep': '<@691221955579478016>',
-    MrViktorNikolaevich: '<@492418187669930014>',
     RomanLi182: '<@656471318274899987>',
     RomanMishushin: '<@691712005601755147>',
     AleksanderMolodtsov: '<@691538395310063686>',
     'ilya-mishushin': '<@557235247369158682>',
     dmitrychelyaev: '<@691221927859191809>',
+    kondratievm: '<@590586790725943328>',
 };
 
 export const messageHandler = (discordClient: DiscordClient) => async (
