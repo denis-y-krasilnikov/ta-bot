@@ -22,7 +22,7 @@ export const messageHandler = (discordClient: DiscordClient) => async (
         if ([Events.CLEAR].includes(event)) {
             const channel = await discordClient.findChannel('merge-pls');
             await channel.send({
-                content: `<@347364555736875008>, <@691712005601755147>, pull request ${pr.getHref()} ${message}`,
+                content: `<@691712005601755147>, pull request ${pr.getHref()} ${message}`,
             });
         } else if (
             [Events.BEHIND, Events.CHANGE_REQUEST, Events.CONFLICTING, Events.FAILING].includes(
