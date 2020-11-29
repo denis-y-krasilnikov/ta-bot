@@ -7,7 +7,6 @@ export class PullRequestsFetcher {
     private readonly repository: string;
 
     private whitelist = [
-        'denis-y-krasilnikov',
         'nikita-perep',
         'RomanLi182',
         'RomanMishushin',
@@ -17,7 +16,6 @@ export class PullRequestsFetcher {
     ];
 
     public userToIdMapping = {
-        'denis-y-krasilnikov': 'MDQ6VXNlcjIzMjA5ODg5',
         'nikita-perep': 'MDQ6VXNlcjM0NjQ1MzIy',
         RomanLi182: 'MDQ6VXNlcjQ2NzA5ODI0',
         RomanMishushin: 'MDQ6VXNlcjUxMDc3NzQ3',

@@ -5,7 +5,6 @@ import { logInFile } from '../../../utils/logInFile';
 import { format } from 'util';
 
 const usersMapping = {
-    'denis-y-krasilnikov': '<@347364555736875008>',
     'nikita-perep': '<@691221955579478016>',
     RomanLi182: '<@656471318274899987>',
     RomanMishushin: '<@691712005601755147>',
