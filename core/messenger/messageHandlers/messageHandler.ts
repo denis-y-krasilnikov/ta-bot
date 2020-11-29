@@ -5,7 +5,6 @@ import { logInFile } from '../../../utils/logInFile';
 import { format } from 'util';
 
 const usersMapping = {
-    'denis-y-krasilnikov': '<@347364555736875008>',
     'nikita-perep': '<@691221955579478016>',
     RomanLi182: '<@656471318274899987>',
     RomanMishushin: '<@691712005601755147>',
@@ -23,7 +22,7 @@ export const messageHandler = (discordClient: DiscordClient) => async (
         if ([Events.CLEAR].includes(event)) {
             const channel = await discordClient.findChannel('merge-pls');
             await channel.send({
-                content: `<@347364555736875008>, <@691712005601755147>, pull request ${pr.getHref()} ${message}`,
+                content: `<@691712005601755147>, pull request ${pr.getHref()} ${message}`,
             });
         } else if (
             [Events.BEHIND, Events.CHANGE_REQUEST, Events.CONFLICTING, Events.FAILING].includes(
