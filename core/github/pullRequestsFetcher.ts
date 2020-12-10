@@ -13,6 +13,7 @@ export class PullRequestsFetcher {
         'ilya-mishushin',
         'dmitrychelyaev',
         'kondratievm',
+        'ArtemiyIvlev',
     ];
 
     public userToIdMapping = {
@@ -22,6 +23,7 @@ export class PullRequestsFetcher {
         'ilya-mishushin': 'MDQ6VXNlcjU2MDY3MjEz',
         dmitrychelyaev: 'MDQ6VXNlcjU4NDE1MzIw',
         kondratievm: 'MDQ6VXNlcjI2MjI0MTUw',
+        ArtemiyIvlev: 'MDQ6VXNlcjc1NjY2MDI5',
     };
 
     private query = graphql.defaults({
