@@ -35,6 +35,16 @@ import { Messenger } from "./core/messenger/messenger";
         repository: "UVP-Mobile",
         messenger
     });
+    const uhcDesktopHandler = new UpdatesHandler({
+        owner: "optimaxdev",
+        repository: "UHC-Glasses-Desktop ",
+        messenger,
+    });
+    const uhcMobileHandler = new UpdatesHandler({
+        owner: "optimaxdev",
+        repository: "UHC-Glasses-Mobile ",
+        messenger,
+    });
 
     await gusaDesktopHandler.init();
     await gusaDesktopHandler.run();
@@ -44,4 +54,8 @@ import { Messenger } from "./core/messenger/messenger";
     await uvpDesktopHandler.run();
     await uvpMobileHandler.init();
     await uvpMobileHandler.run();
+    await uhcDesktopHandler.init();
+    await uhcDesktopHandler.run();
+    await uhcMobileHandler.init();
+    await uhcMobileHandler.run();
 })();
