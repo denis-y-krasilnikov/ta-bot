@@ -37,12 +37,12 @@ import { Messenger } from "./core/messenger/messenger";
     });
     const uhcDesktopHandler = new UpdatesHandler({
         owner: "optimaxdev",
-        repository: "UHC-Glasses-Desktop ",
+        repository: "UHC-Glasses-Desktop",
         messenger,
     });
     const uhcMobileHandler = new UpdatesHandler({
         owner: "optimaxdev",
-        repository: "UHC-Glasses-Mobile ",
+        repository: "UHC-Glasses-Mobile",
         messenger,
     });
 
