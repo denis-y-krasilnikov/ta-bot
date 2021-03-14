@@ -12,6 +12,7 @@ const usersMapping = {
     dmitrychelyaev: '<@691221927859191809>',
     kondratievm: '<@590586790725943328>',
     ArtemiyIvlev: '<@248915828488142848>',
+    'stan-san': '<@691770911057117204>',
 };
 
 export const messageHandler = (discordClient: DiscordClient) => async (
