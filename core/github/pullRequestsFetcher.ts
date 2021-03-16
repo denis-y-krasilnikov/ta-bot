@@ -14,7 +14,7 @@ export class PullRequestsFetcher {
         'dmitrychelyaev',
         'kondratievm',
         'ArtemiyIvlev',
-        'stan-san,'
+        'stan-san',
     ];
 
     public userToIdMapping = {
