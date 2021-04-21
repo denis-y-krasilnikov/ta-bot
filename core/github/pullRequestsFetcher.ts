@@ -27,7 +27,7 @@ export class PullRequestsFetcher {
         kondratievm: 'MDQ6VXNlcjI2MjI0MTUw',
         ArtemiyIvlev: 'MDQ6VXNlcjc1NjY2MDI5',
         'stan-san': 'MDQ6VXNlcjQ4NDQ2MTEx',
-        'stercoris': 'MDQ6VXNlcjU5MTc1NTUy',
+        stercoris: 'MDQ6VXNlcjU5MTc1NTUy',
     };
 
     private query = graphql.defaults({
