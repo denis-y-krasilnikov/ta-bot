@@ -6,7 +6,6 @@ import { format } from 'util';
 
 const usersMapping = {
     'nikita-perep': '<@691221955579478016>',
-    RomanLi182: '<@656471318274899987>',
     RomanMishushin: '<@691712005601755147>',
     'ilya-mishushin': '<@557235247369158682>',
     dmitrychelyaev: '<@691221927859191809>',

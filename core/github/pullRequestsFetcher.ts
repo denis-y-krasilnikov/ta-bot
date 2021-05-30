@@ -8,7 +8,6 @@ export class PullRequestsFetcher {
 
     private whitelist = [
         'nikita-perep',
-        'RomanLi182',
         'RomanMishushin',
         'ilya-mishushin',
         'dmitrychelyaev',
@@ -20,7 +19,6 @@ export class PullRequestsFetcher {
 
     public userToIdMapping = {
         'nikita-perep': 'MDQ6VXNlcjM0NjQ1MzIy',
-        RomanLi182: 'MDQ6VXNlcjQ2NzA5ODI0',
         RomanMishushin: 'MDQ6VXNlcjUxMDc3NzQ3',
         'ilya-mishushin': 'MDQ6VXNlcjU2MDY3MjEz',
         dmitrychelyaev: 'MDQ6VXNlcjU4NDE1MzIw',
